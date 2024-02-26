@@ -51,9 +51,9 @@ def main():
     with_span_eos = True if args.wo_span_eos == 'true' else False
     dev_filename = '-dev_qq' if args.dev_only_q_encoder == 1 or args.simclr == 1  else '-dev_qk'
     wolinear = '-wolinear' if args.wolinear == 1 else ''
-    args.output_loss_dir = './' + args.output_log_dir + '/' + str(args.train_sample_num) + '-' + args.lg+ '-'+str(args.all_sentence_num)+ '-' +args.wo_span_eos + '-' + str(queue_length) + '-' + str(para_T)  + '-' + str(args.seed) \
+    args.output_loss_dir = args.output_log_dir + '/' + str(args.train_sample_num) + '-' + args.lg+ '-'+str(args.all_sentence_num)+ '-' +args.wo_span_eos + '-' + str(queue_length) + '-' + str(para_T)  + '-' + str(args.seed) \
             + '-' + str(args.num_train_epochs) + '-' + str(args.momentum) + '-' + str(args.simclr) + dev_filename + '-layer_' + str(args.layer_id) + wolinear
-    args.output_model_path = './' + args.output_log_dir+ '/' + str(args.train_sample_num) + '-' + args.lg+ '-'+str(args.all_sentence_num) + '-' +args.wo_span_eos + '-' + str(queue_length) + '-' + str(para_T) + '-' + str(args.seed) \
+    args.output_model_path = args.output_log_dir+ '/' + str(args.train_sample_num) + '-' + args.lg+ '-'+str(args.all_sentence_num) + '-' +args.wo_span_eos + '-' + str(queue_length) + '-' + str(para_T) + '-' + str(args.seed) \
         + '-' + str(args.num_train_epochs)  + '-' + str(args.momentum) + '-' + str(args.simclr) + dev_filename + '-layer_' + str(args.layer_id) + wolinear +  '/best.pt'
     best_acc = 0
     # Data
