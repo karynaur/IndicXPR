@@ -21,8 +21,8 @@ args = getArgs()
 # from new acc
 seed_everything(args.seed)  
 
-# if args.distributed:
-#     args.distributed = False
+if args.distributed:
+    args.distributed = False
 
 if args.distributed:
     dist.init_process_group(backend='nccl')
