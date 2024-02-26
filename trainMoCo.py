@@ -28,7 +28,7 @@ if args.distributed:
     dist.init_process_group(backend='nccl')
 
 def main():
-    base = "./data/"
+    base = args.data
     args.train_phrase_path = base + "train/train-en-" + args.lg + "-" + args.sn + "-phrase.txt"
     args.dev_phrase_path = base + "dev/dev-en-" + args.lg + "-" + args.sn + "-phrase.txt"
     args.test_phrase_path = base + "test/test-en-" + args.lg + "-" + args.sn + "-phrase.txt"
